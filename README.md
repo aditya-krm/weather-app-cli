@@ -9,7 +9,7 @@ A command-line interface (CLI) application that allows users to register, log in
 - [API Usage](#api-usage)
 - [Database Schema](#database-schema)
 - [Design Decisions](#design-decisions)
-- [Bonus asked](#bonus-asked)
+- [Additional Features and Their Integration](#additional-features-and-their-integration)
 
 ## Source Code Style
 
@@ -129,10 +129,17 @@ The application uses two tables: `users` and `search_history`.
 5. **Database:**
    - MySQL is used for persistent storage due to its reliability and ease of use.
 
-## Bonus asked
+## Additional Features and Their Integration
 
-- Implement a feature allowing users to delete specific entries from their search history.
-- Add functionality to allow users to update their profile information (e.g., username,
-  password).
-- Extend the application to support additional weather-related queries, such as a 5-day
-  forecast.
+### Search History Management:
+
+- Allow users to delete their search history or update specific records.
+- Let users retrieve weather data for previously searched locations.
+
+### Profile Updates:
+
+- Enable users to update their username and password.
+
+### Extended Weather Queries:
+
+- Fetch additional data from OpenWeatherMap, such as forecast data for multiple days, sunrise/sunset times, and air quality.

@@ -5,6 +5,6 @@ def connect_to_db():
     return mysql.connector.connect(
         host="localhost",
         user="sss_assignment_sep24",
-        password="doitnow ",
+        password="doitnow ", #added space for maintaining 8 characters
         database="weather_db"
     )

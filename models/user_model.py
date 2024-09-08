@@ -35,3 +35,21 @@ def login_user(connection):
         return None
 
     cursor.close()
+
+# update profile details
+def update_profile(connection, user_id):
+    cursor = connection.cursor()
+    new_username = input("Enter a new username: ")
+    new_password = getpass("Enter a new password: ")
+    
+    hashed_password = bcrypt.hashpw(new_password.encode('utf-8'), bcrypt.gensalt())
+
+    try:
+        cursor.execute("UPDATE users SET username = %s, password = %s WHERE id = %s", (new_username, hashed_password, user_id))
+        connection.commit()
+        print("Profile updated successfully.")
+    except mysql.connector.Error as err:
+        print(f"Error updating profile: {err}")
+        connection.rollback()
+    finally:
+        cursor.close()
